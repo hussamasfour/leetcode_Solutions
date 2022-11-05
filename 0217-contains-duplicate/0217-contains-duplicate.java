@@ -3,16 +3,13 @@ class Solution {
         if(nums.length == 1){
             return false;
         }
-       Map<Integer, Integer> map = new  HashMap<>();
+       Set<Integer> set = new HashSet<>();
         
         for(int i =0;i< nums.length;i++){
-            if(map.containsKey(nums[i])){
+            if(!set.add(nums[i])){
                 return true;
-            }
-            
-            map.put(nums[i], 1);
-        }
-        
-        return false;
+            } 
+        }   
+        return false; 
     }
 }
